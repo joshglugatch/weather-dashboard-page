@@ -5,7 +5,10 @@
 .day{
     float: left;
     height: 180px;
-    width: 150px;
-    background-color: skyblue;
+    width: 160px;
+    background-color: #B2E9ED;
 }
-
+.history{
+    color: black;
+    background-color: aliceblue;
+}
