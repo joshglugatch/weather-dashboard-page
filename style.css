@@ -10,5 +10,6 @@
 }
 .history{
     color: black;
-    background-color: aliceblue;
+    background-color: aliceblue; 
+    text-transform:capitalize;
 }
