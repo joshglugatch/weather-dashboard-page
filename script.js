@@ -23,16 +23,16 @@ $.ajax({
         if (response.value < 3){
           UV.removeClass("red green yellow orange purple");
           UV.addClass("green");
-        } else if(response.value >2 && response.value < 6){
+        } else if(response.value >= 3 && response.value < 5){
           UV.removeClass("red green yellow orange purple");
           UV.addClass("yellow");
-        } else if (response.value > 5 && response.value < 8){
+        } else if (response.value >= 5 && response.value < 7){
          UV.removeClass("red green yellow orange purple");
           $(".uvIndex").addClass("orange");
-        }else if (response.value > 7 && response.value < 11){
+        }else if (response.value >= 7 && response.value < 11){
           UV.removeClass("red green yellow orange purple");
           UV.addClass("red");
-        }else if (response.value > 5 && response.value < 8){
+        }else if (response.value >= 11){
           UV.removeClass("red green yellow orange purple");
           UV.addClass("purple");
         }
@@ -95,23 +95,23 @@ function displayCityInfo(){
             method: "GET"
           }).then(function(response) {
             var UV = $(".uvIndex")
-        if (response.value < 3){
-          UV.removeClass("red green yellow orange purple");
-          UV.addClass("green");
-        } else if(response.value >2 && response.value < 6){
-          UV.removeClass("red green yellow orange purple");
-          UV.addClass("yellow");
-        } else if (response.value > 5 && response.value < 8){
-         UV.removeClass("red green yellow orange purple");
-          $(".uvIndex").addClass("orange");
-        }else if (response.value > 7 && response.value < 11){
-          UV.removeClass("red green yellow orange purple");
-          UV.addClass("red");
-        }else if (response.value > 5 && response.value < 8){
-          UV.removeClass("red green yellow orange purple");
-          UV.addClass("purple");
-        }
-        $(".uvIndex").text(response.value);
+            if (response.value < 3){
+              UV.removeClass("red green yellow orange purple");
+              UV.addClass("green");
+            } else if(response.value >= 3 && response.value < 5){
+              UV.removeClass("red green yellow orange purple");
+              UV.addClass("yellow");
+            } else if (response.value >= 5 && response.value < 7){
+             UV.removeClass("red green yellow orange purple");
+              $(".uvIndex").addClass("orange");
+            }else if (response.value >= 7 && response.value < 11){
+              UV.removeClass("red green yellow orange purple");
+              UV.addClass("red");
+            }else if (response.value >= 11){
+              UV.removeClass("red green yellow orange purple");
+              UV.addClass("purple");
+            }
+            $(".uvIndex").text(response.value);
         });
 
         var dayURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&units=imperial&appid=16e99cc70c7cbbdcf35ae6166af0f447"
@@ -216,23 +216,23 @@ $(".searchBtn").on("click", function(event){
             method: "GET"
           }).then(function(response) {
             var UV = $(".uvIndex")
-        if (response.value < 3){
-          UV.removeClass("red green yellow orange purple");
-          UV.addClass("green");
-        } else if(response.value >2 && response.value < 6){
-          UV.removeClass("red green yellow orange purple");
-          UV.addClass("yellow");
-        } else if (response.value > 5 && response.value < 8){
-         UV.removeClass("red green yellow orange purple");
-          $(".uvIndex").addClass("orange");
-        }else if (response.value > 7 && response.value < 11){
-          UV.removeClass("red green yellow orange purple");
-          UV.addClass("red");
-        }else if (response.value > 5 && response.value < 8){
-          UV.removeClass("red green yellow orange purple");
-          UV.addClass("purple");
-        }
-        $(".uvIndex").text(response.value);
+            if (response.value < 3){
+              UV.removeClass("red green yellow orange purple");
+              UV.addClass("green");
+            } else if(response.value >= 3 && response.value < 5){
+              UV.removeClass("red green yellow orange purple");
+              UV.addClass("yellow");
+            } else if (response.value >= 5 && response.value < 7){
+             UV.removeClass("red green yellow orange purple");
+              $(".uvIndex").addClass("orange");
+            }else if (response.value >= 7 && response.value < 11){
+              UV.removeClass("red green yellow orange purple");
+              UV.addClass("red");
+            }else if (response.value >= 11){
+              UV.removeClass("red green yellow orange purple");
+              UV.addClass("purple");
+            }
+            $(".uvIndex").text(response.value);
         });
 
         var dayURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&units=imperial&appid=16e99cc70c7cbbdcf35ae6166af0f447"
