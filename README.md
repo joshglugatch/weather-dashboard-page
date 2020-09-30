@@ -105,12 +105,12 @@ $(".searchBtn").on("click", function(event){
 <br>
 
 # Deployed Link:
-https://joshglugatch.github.io/day-planner/
+https://joshglugatch.github.io/weather-dashboard-page/
 
 <br>
 
 # Repository Link:
-https://github.com/joshglugatch/day-planner
+https://github.com/joshglugatch/weather-dashboard-page
 
 <br>
 
