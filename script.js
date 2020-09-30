@@ -6,7 +6,9 @@ $.ajax({
     url: queryURL,
     method: "GET"
   }).then(function(response) {
+    console.log(response)
       $(".currentCity").text(response.name +"  "+ moment().format('L'))
+      $("#mainIcon").attr("src","http://openweathermap.org/img/wn/"+response.weather[0].icon+"@2x.png");
       $(".temp").text("Temperature: " + (response.main.temp));
       $(".humid").text("Humidity: " + (response.main.humidity));
       $(".wind").text("Wind: " + (response.wind.speed)); 
@@ -117,7 +119,6 @@ function displayCityInfo(){
 }
 
 //create array for history
-
 var searchHistory = ["Los Angeles"]
 var get = JSON.parse(localStorage.getItem("array"))
 if(get !== null){
@@ -226,68 +227,3 @@ $(".searchBtn").on("click", function(event){
 renderButtons();
 
 $(document).on("click", ".history", displayCityInfo)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// var city = ""
-// var storeArray = [];
-// var getCity = localStorage.getItem("array")
-// var parseCity = JSON.parse(getCity)
-// //search on click button
-// $(".searchBtn").on("click", function(){
-//     city = $("#searchCity").val();
-
-// var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=16e99cc70c7cbbdcf35ae6166af0f447"
-
-//     $.ajax({
-//       url: queryURL,
-//       method: "GET"
-//     }).then(function(response) {
-//         if(city === null){
-//             return;
-//         }
-        
-//         storeArray.push(response.name) 
-//         localStorage.setItem('array', JSON.stringify(storeArray))
-//         getStore();
-//     });
-
-// });
-
-//   getStore();
-
-
-//   function getStore(){
-// console.log(parseCity)
-
-// for(var i=0; i < parseCity.length ; i++){
-//  var b = $("<button>");
-//  b.addClass("history mb-1 btn btn-primary");
-//  b.text(parseCity[i]);
-// $(".addHistory").prepend(b);
-// }
-// };
-
