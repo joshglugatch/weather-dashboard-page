@@ -13,3 +13,18 @@
     background-color: aliceblue; 
     text-transform:capitalize;
 }
+.green{
+    background-color: chartreuse;
+}
+.yellow{
+    background-color: yellow;
+}
+.orange{
+    background-color: orange;
+}
+.red{
+    background-color: orangered;
+}
+.purple{
+    background-color: plum;
+}
