@@ -8,13 +8,13 @@ $.ajax({
   }).then(function(response) {
     console.log(response)
       $(".currentCity").text(response.name +"  "+ moment().format('L'))
-      $("#mainIcon").attr("src","http://openweathermap.org/img/wn/"+response.weather[0].icon+"@2x.png");
+      $("#mainIcon").attr("src","https://openweathermap.org/img/wn/"+response.weather[0].icon+"@2x.png");
       $(".temp").text("Temperature: " + (response.main.temp));
       $(".humid").text("Humidity: " + (response.main.humidity));
       $(".wind").text("Wind: " + (response.wind.speed)); 
       var lat = response.coord.lat
       var lon = response.coord.lon
-      var uvURL = "http://api.openweathermap.org/data/2.5/uvi?lat=" + lat + "&lon=" + lon +"&appid=16e99cc70c7cbbdcf35ae6166af0f447"
+      var uvURL = "https://api.openweathermap.org/data/2.5/uvi?lat=" + lat + "&lon=" + lon +"&appid=16e99cc70c7cbbdcf35ae6166af0f447"
       $.ajax({
         url: uvURL,
         method: "GET"
@@ -22,33 +22,33 @@ $.ajax({
         $(".uvIndex").text("UV Index: " + response.value)
     });
 
-    var dayURL = "http://api.openweathermap.org/data/2.5/forecast?q=" + city + "&units=imperial&appid=16e99cc70c7cbbdcf35ae6166af0f447"
+    var dayURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&units=imperial&appid=16e99cc70c7cbbdcf35ae6166af0f447"
     $.ajax({
         url: dayURL,
         method: "GET"
       }).then(function(response) {
           $("#date1").text(moment().add(1,"days").format("MMMM Do"))
-          $("#icon1").attr("src", "http://openweathermap.org/img/wn/"+response.list[1].weather[0].icon+"@2x.png") 
+          $("#icon1").attr("src", "https://openweathermap.org/img/wn/"+response.list[1].weather[0].icon+"@2x.png") 
           $("#temp1").text("Temp: " + response.list[3].main.temp)
           $("#humid1").text("Humidity: " + response.list[3].main.humidity)
           
           $("#date2").text(moment().add(2,"days").format("MMMM Do"))
-          $("#icon2").attr("src", "http://openweathermap.org/img/wn/"+response.list[10].weather[0].icon+"@2x.png")
+          $("#icon2").attr("src", "https://openweathermap.org/img/wn/"+response.list[10].weather[0].icon+"@2x.png")
           $("#temp2").text("Temp: " + response.list[11].main.temp)
           $("#humid2").text("Humidity: " + response.list[11].main.humidity)
           
           $("#date3").text(moment().add(3,"days").format("MMMM Do"))
-          $("#icon3").attr("src", "http://openweathermap.org/img/wn/"+response.list[19].weather[0].icon+"@2x.png")
+          $("#icon3").attr("src", "https://openweathermap.org/img/wn/"+response.list[19].weather[0].icon+"@2x.png")
           $("#temp3").text("Temp: " + response.list[19].main.temp)
           $("#humid3").text("Humidity: " + response.list[19].main.humidity)
           
           $("#date4").text(moment().add(4,"days").format("MMMM Do"))
-          $("#icon4").attr("src", "http://openweathermap.org/img/wn/"+response.list[28].weather[0].icon+"@2x.png")
+          $("#icon4").attr("src", "https://openweathermap.org/img/wn/"+response.list[28].weather[0].icon+"@2x.png")
           $("#temp4").text("Temp: " + response.list[27].main.temp)
           $("#humid4").text("Humidity: " + response.list[27].main.humidity)
           
           $("#date5").text(moment().add(5,"days").format("MMMM Do"))
-          $("#icon5").attr("src", "http://openweathermap.org/img/wn/"+response.list[37].weather[0].icon+"@2x.png")
+          $("#icon5").attr("src", "https://openweathermap.org/img/wn/"+response.list[37].weather[0].icon+"@2x.png")
           $("#temp5").text("Temp: " + response.list[35].main.temp)
           $("#humid5").text("Humidity: " + response.list[35].main.humidity)   
     });
@@ -71,7 +71,7 @@ function displayCityInfo(){
 
           var lat = response.coord.lat
           var lon = response.coord.lon
-          var uvURL = "http://api.openweathermap.org/data/2.5/uvi?lat=" + lat + "&lon=" + lon +"&appid=16e99cc70c7cbbdcf35ae6166af0f447"
+          var uvURL = "https://api.openweathermap.org/data/2.5/uvi?lat=" + lat + "&lon=" + lon +"&appid=16e99cc70c7cbbdcf35ae6166af0f447"
           $.ajax({
             url: uvURL,
             method: "GET"
@@ -80,7 +80,7 @@ function displayCityInfo(){
               $(".uvIndex").text("UV Index: " + response.value)
         });
 
-        var dayURL = "http://api.openweathermap.org/data/2.5/forecast?q=" + city + "&units=imperial&appid=16e99cc70c7cbbdcf35ae6166af0f447"
+        var dayURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&units=imperial&appid=16e99cc70c7cbbdcf35ae6166af0f447"
         $.ajax({
             url: dayURL,
             method: "GET"
@@ -88,27 +88,27 @@ function displayCityInfo(){
               //console.log(response);
 
           $("#date1").text(moment().add(1,"days").format("MMMM Do"))
-          $("#icon1").attr("src", "http://openweathermap.org/img/wn/"+response.list[1].weather[0].icon+"@2x.png") 
+          $("#icon1").attr("src", "https://openweathermap.org/img/wn/"+response.list[1].weather[0].icon+"@2x.png") 
           $("#temp1").text("Temp: " + response.list[3].main.temp)
           $("#humid1").text("Humidity: " + response.list[3].main.humidity)
           
           $("#date2").text(moment().add(2,"days").format("MMMM Do"))
-          $("#icon2").attr("src", "http://openweathermap.org/img/wn/"+response.list[10].weather[0].icon+"@2x.png")
+          $("#icon2").attr("src", "https://openweathermap.org/img/wn/"+response.list[10].weather[0].icon+"@2x.png")
           $("#temp2").text("Temp: " + response.list[11].main.temp)
           $("#humid2").text("Humidity: " + response.list[11].main.humidity)
           
           $("#date3").text(moment().add(3,"days").format("MMMM Do"))
-          $("#icon3").attr("src", "http://openweathermap.org/img/wn/"+response.list[19].weather[0].icon+"@2x.png")
+          $("#icon3").attr("src", "https://openweathermap.org/img/wn/"+response.list[19].weather[0].icon+"@2x.png")
           $("#temp3").text("Temp: " + response.list[19].main.temp)
           $("#humid3").text("Humidity: " + response.list[19].main.humidity)
           
           $("#date4").text(moment().add(4,"days").format("MMMM Do"))
-          $("#icon4").attr("src", "http://openweathermap.org/img/wn/"+response.list[28].weather[0].icon+"@2x.png")
+          $("#icon4").attr("src", "https://openweathermap.org/img/wn/"+response.list[28].weather[0].icon+"@2x.png")
           $("#temp4").text("Temp: " + response.list[27].main.temp)
           $("#humid4").text("Humidity: " + response.list[27].main.humidity)
           
           $("#date5").text(moment().add(5,"days").format("MMMM Do"))
-          $("#icon5").attr("src", "http://openweathermap.org/img/wn/"+response.list[37].weather[0].icon+"@2x.png")
+          $("#icon5").attr("src", "https://openweathermap.org/img/wn/"+response.list[37].weather[0].icon+"@2x.png")
           $("#temp5").text("Temp: " + response.list[35].main.temp)
           $("#humid5").text("Humidity: " + response.list[35].main.humidity)
               
@@ -176,7 +176,7 @@ $(".searchBtn").on("click", function(event){
 
           var lat = response.coord.lat
           var lon = response.coord.lon
-          var uvURL = "http://api.openweathermap.org/data/2.5/uvi?lat=" + lat + "&lon=" + lon +"&appid=16e99cc70c7cbbdcf35ae6166af0f447"
+          var uvURL = "https://api.openweathermap.org/data/2.5/uvi?lat=" + lat + "&lon=" + lon +"&appid=16e99cc70c7cbbdcf35ae6166af0f447"
           $.ajax({
             url: uvURL,
             method: "GET"
@@ -185,7 +185,7 @@ $(".searchBtn").on("click", function(event){
               $(".uvIndex").text("UV Index: " + response.value)
         });
 
-        var dayURL = "http://api.openweathermap.org/data/2.5/forecast?q=" + city + "&units=imperial&appid=16e99cc70c7cbbdcf35ae6166af0f447"
+        var dayURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&units=imperial&appid=16e99cc70c7cbbdcf35ae6166af0f447"
         $.ajax({
             url: dayURL,
             method: "GET"
@@ -193,27 +193,27 @@ $(".searchBtn").on("click", function(event){
               //console.log(response);
 
           $("#date1").text(moment().add(1,"days").format("MMMM Do"))
-          $("#icon1").attr("src", "http://openweathermap.org/img/wn/"+response.list[1].weather[0].icon+"@2x.png") 
+          $("#icon1").attr("src", "https://openweathermap.org/img/wn/"+response.list[1].weather[0].icon+"@2x.png") 
           $("#temp1").text("Temp: " + response.list[3].main.temp)
           $("#humid1").text("Humidity: " + response.list[3].main.humidity)
           
           $("#date2").text(moment().add(2,"days").format("MMMM Do"))
-          $("#icon2").attr("src", "http://openweathermap.org/img/wn/"+response.list[10].weather[0].icon+"@2x.png")
+          $("#icon2").attr("src", "https://openweathermap.org/img/wn/"+response.list[10].weather[0].icon+"@2x.png")
           $("#temp2").text("Temp: " + response.list[11].main.temp)
           $("#humid2").text("Humidity: " + response.list[11].main.humidity)
           
           $("#date3").text(moment().add(3,"days").format("MMMM Do"))
-          $("#icon3").attr("src", "http://openweathermap.org/img/wn/"+response.list[19].weather[0].icon+"@2x.png")
+          $("#icon3").attr("src", "https://openweathermap.org/img/wn/"+response.list[19].weather[0].icon+"@2x.png")
           $("#temp3").text("Temp: " + response.list[19].main.temp)
           $("#humid3").text("Humidity: " + response.list[19].main.humidity)
           
           $("#date4").text(moment().add(4,"days").format("MMMM Do"))
-          $("#icon4").attr("src", "http://openweathermap.org/img/wn/"+response.list[28].weather[0].icon+"@2x.png")
+          $("#icon4").attr("src", "https://openweathermap.org/img/wn/"+response.list[28].weather[0].icon+"@2x.png")
           $("#temp4").text("Temp: " + response.list[27].main.temp)
           $("#humid4").text("Humidity: " + response.list[27].main.humidity)
           
           $("#date5").text(moment().add(5,"days").format("MMMM Do"))
-          $("#icon5").attr("src", "http://openweathermap.org/img/wn/"+response.list[37].weather[0].icon+"@2x.png")
+          $("#icon5").attr("src", "https://openweathermap.org/img/wn/"+response.list[37].weather[0].icon+"@2x.png")
           $("#temp5").text("Temp: " + response.list[35].main.temp)
           $("#humid5").text("Humidity: " + response.list[35].main.humidity)
               
